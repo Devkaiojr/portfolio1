@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Devkaiojr</title>
+  </head>
+  <body>
+    <div class="particula"></div>
+
+    <nav class="navegacao">
+      <ul class="menu">
+        <li>
+          <a href="#inicio" class="menu-link"> Início</a>
+        </li>
+        <li>
+          <a href="#sobre" class="menu-link"> Sobre</a>
+        </li>
+        <li>
+          <a href="#projetos" class="menu-link"> Projetos</a>
+        </li>
+        <li>
+          <a href="#contatos" class="menu-link"> Contato</a>
+        </li>
+      </ul>
+    </nav>
+    <main id="inicio" class="cabecalho">
+      <div>
+        <img
+          src="img/285aff45c82bb71261161c17f90517c7.jpg"
+          alt="imagem-kaio"
+          class="foto-perfil"
+        />
+        <h1>Kaio Guarines</h1>
+        <p class="cabecalho-sub-titulo">Desenvolvedor Front End</p>
+      </div>
+    </main>
+
+    <section id="sobre" class="projetos">
+      <h2 class="sobre-titulo">Sobre</h2>
+      <div class="sobre-caixa">
+        <p class="sobre-paragrafo">
+          Ser desenvolvedor front-end é mais do que apenas escrever código. Para
+          mim, é uma verdadeira paixão transformar ideias em experiências
+          visuais que encantam e conectam as pessoas. A cada linha de código,
+          sinto que estou criando algo que vai impactar diretamente a forma como
+          os usuários interagem com a web. Não é apenas sobre a estética, mas
+          sobre como a interface funciona de maneira intuitiva e fluida,
+          proporcionando uma navegação simples e agradável.
+        </p>
+      </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+      <h2 class="projetos-titulo">Meus Projetos</h2>
+      <div class="projetos-caixa">
+        <div class="projetos-card">
+          <img
+            src="img/Captura de tela 2025-03-13 203528.png"
+            alt=""
+            class="projetos-imagem"
+          />
+          <div class="caixa-textos-projetos">
+            <h3 class="info-projetos">Loja De Cafe Mordena</h3>
+            <p class="paragrafo-projetos">
+              Loja de Cafe interativo com animaçoes suaves
+            </p>
+          </div>
+        </div>
+        <div class="projetos-card">
+          <img
+            src="img/Captura de tela 2025-03-13 203700.png"
+            alt=""
+            class="projetos-imagem"
+          />
+          <div class="caixa-textos-projetos">
+            <h3 class="info-projetos">Loja De Refrigerantes</h3>
+            <p class="paragrafo-projetos">
+              Loja de Refrigerantes animaçoes suaves e design responsivo
+            </p>
+          </div>
+        </div>
+        <div class="projetos-card">
+          <img
+            src="img/Captura de tela 2025-03-13 210043.png"
+            alt=""
+            class="projetos-imagem"
+          />
+          <div class="caixa-textos-projetos">
+            <h3 class="info-projetos">Tela de login</h3>
+            <p class="paragrafo-projetos">
+              Tela de login com animaçoes suaves e interatividade com usuario
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+      <h2 class="contatos-titulo">Entre em Contato</h2>
+      <form
+        action=""
+        class="formulario-contatos"
+        id="formulario"
+        onsubmit="enviarWhats(event)"
+      >
+        <div class="grupo-form">
+          <input placeholder="Nome" class="campo-form" id="nome" />
+        </div>
+        <div class="grupo-form">
+          <textarea
+            class="campo-form"
+            placeholder="Digete sua mensagem"
+            rows="5"
+            id="mensagem"
+          ></textarea>
+        </div>
+        <button type="submit" class="botao-form">Enviar Whatsapp</button>
+      </form>
+    </section>
+
+    <script>
+      function enviarWhats(event) {
+        event.preventDefault();
+        const nome = document.getElementById("nome" ).value;
+        const mensagem = document.getElementById("mensagem") .value;
+        const telefone = "5581984046589";
+
+        const texto = `Olá! Me chamo ${nome}, ${mensagem}`;
+        const msgFormatada = encodeURIComponent(texto);
+
+        const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+
+        console.log(url);
+        window.open(url), "_blank";
+      }
+    </script>
+  </body>
+</html>
